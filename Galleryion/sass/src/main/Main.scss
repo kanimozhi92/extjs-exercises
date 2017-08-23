@@ -1,0 +1,21 @@
+.gallery-dataview{
+    .dataview-multisort-item{
+        border: 2px solid rgb(111, 151, 165);
+        margin: 3px;
+        float:left;
+        padding: 3px;
+    
+        &:hover{
+            border: 2px solid yellow;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    
+        img{
+            width:300px;
+            height:300px;
+        }
+    }
+}
