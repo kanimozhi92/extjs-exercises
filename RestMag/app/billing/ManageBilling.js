@@ -1,5 +1,9 @@
 Ext.define('RestMag.chef.ManageBilling',{
     extend : 'Ext.panel.Panel',
     alias  : 'widget.rmmanagebilling',
-    html  : '<h2>Manage billing</h2>'
+    items : [{
+        xtype : 'mastergrid',
+        gridId : 'managebillinggrid',
+        gridUrl   : 'http://localhost:8080/getManageOrders'
+    }]
 });

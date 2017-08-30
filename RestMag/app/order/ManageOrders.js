@@ -14,7 +14,8 @@ Ext.define('RestMag.orders.ManageOrders',{
 	buildItems : function(){
 		return [{
 			xtype     : 'mastergrid',
-			gridId    : 'manageordergrid'
+			gridId    : 'manageordergrid',
+			gridUrl   : 'http://localhost:8080/getManageOrders'
 		}]
 	}
 });

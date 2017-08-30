@@ -2,15 +2,30 @@ Ext.define('RestMag.main.MainController',{
     extend : 'Ext.app.ViewController',
     alias  : 'controller.main',
     onClickTreePanelMenuItem : function( treepanel, record, item, index, e, eOpts ){
-        var me             = this,
-            references     = me.getReferences(),
-            masterTabPanel = references.masterTabPanel;
+        var references  = this.getReferences(),
+            tabPanel    = references.masterTabPanel,
+            nodeText    = record.data.text,
+            tabBar      = tabPanel.getTabBar(),
+            tabIndex;
 
-        masterTabPanel.add({
-            title : record.data.text,
-            items : [{
-                xtype : record.data.view
-            }]
-        });  
-    } 
+        for(var i=0;i<tabBar.items.length;i++){
+            if(tabBar.items.get(i).getText()==nodeText)
+                tabIndex=i;
+        }
+        if(Ext.isEmpty(tabIndex)){
+            tabPanel.add({
+                title       : record.data.text,
+                closable    : true,
+                bodyPadding : 10,
+                xtype       : record.data.view,
+                layout      : {
+                    type    : 'vbox',
+                    align   : 'stretch',
+                    pack    : 'start'
+                }
+            });
+            tabIndex = tabPanel.items.length - 1;    
+        }
+        tabPanel.setActiveTab(tabIndex);
+    }
 });

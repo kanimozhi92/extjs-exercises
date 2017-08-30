@@ -14,6 +14,7 @@ Ext.define('RestMag.framework.grid.MasterGridController',{
 
 		Ext.Ajax.request({
 			url     : 'resources/mock/'+grid.gridId+'.json',
+			//url     : grid.gridUrl, (for mapping via url..java code)
 			method  : 'GET',
 			scope   : this,
 			success : function(response){
@@ -27,7 +28,7 @@ Ext.define('RestMag.framework.grid.MasterGridController',{
 				grid.reconfigure(gridStore,decodedResponse.metadata);
 			},
 			failure : function(response){
-				console.log("Failed to load the grid!");
+				Ext.Msg.alert("Failed to load the grid!");
 			}
 		})  
 	},
