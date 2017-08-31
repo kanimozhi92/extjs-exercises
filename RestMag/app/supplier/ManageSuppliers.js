@@ -1,4 +1,4 @@
-Ext.define('RestMag.chef.ManageSuppliers',{
+Ext.define('RestMag.supplier.ManageSuppliers',{
     extend : 'Ext.panel.Panel',
     alias  : 'widget.rmmanagesuppliers',
     items : [{

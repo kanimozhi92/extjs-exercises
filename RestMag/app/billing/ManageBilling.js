@@ -1,4 +1,4 @@
-Ext.define('RestMag.chef.ManageBilling',{
+Ext.define('RestMag.billing.ManageBilling',{
     extend : 'Ext.panel.Panel',
     alias  : 'widget.rmmanagebilling',
     items : [{

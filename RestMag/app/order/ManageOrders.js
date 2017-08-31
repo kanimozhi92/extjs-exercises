@@ -1,4 +1,4 @@
-Ext.define('RestMag.orders.ManageOrders',{
+Ext.define('RestMag.order.ManageOrders',{
 	extend     : 'Ext.panel.Panel',
 	alias      : 'widget.rmmanageorders',
 	requires   : [
